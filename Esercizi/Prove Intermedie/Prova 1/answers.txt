@@ -1,0 +1,5 @@
+a. Router ID 120.20.3.2
+
+b. Router b03
+
+c. 2

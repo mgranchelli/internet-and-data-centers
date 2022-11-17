@@ -1,0 +1,2 @@
+/sbin/ifconfig eth0 195.11.14.5 netmask 255.255.255.0 up
+
