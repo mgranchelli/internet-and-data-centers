@@ -1,0 +1,5 @@
+/sbin/ifconfig eth0 192.168.0.2 netmask 255.255.255.252 up
+/sbin/ifconfig eth1 192.168.0.6 netmask 255.255.255.252 up
+/sbin/ifconfig eth2 192.168.0.26 netmask 255.255.255.252 up
+/sbin/ifconfig eth3 192.168.0.30 netmask 255.255.255.252 up
+/etc/init.d/frr start
