@@ -1,0 +1,2 @@
+Lab simile a red-baron, dove il router al centro della colonna di sinistra è collegato all'ultimo router sulla colonna di destra.
+Ad r2 è collegato un altro router b03. Questo router ha su un'interfaccia il prefisso 193.204.0.0/15. Per questo router trovare il nome dell'AS su RIPEstat facendo riferimento al prefisso dato.
