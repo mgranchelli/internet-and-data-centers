@@ -1,0 +1,5 @@
+3 AS7 e AS8 al lato con un ruoter e uno centrale AS100.
+AS100 con 5 router, due router estremi collegati uno con AS7 e l'altro con AS8.
+I due router hanno interfaccia di loopback uno 2.2.2.2 e l'altro 3.3.3.3, 
+collegati tramite iBGP.
+Snippet di codice aggiuntivo per redistribuzione di iBGP e eBGP.
