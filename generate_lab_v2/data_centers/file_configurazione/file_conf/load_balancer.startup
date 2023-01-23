@@ -1,0 +1,4 @@
+# iptables or iptables-legacy
+iptables-legacy --table nat --append PREROUTING --destination <destination_ip> -p tcp --dport 80 --match statistic --mode random --probability 0.5 --jump DNAT --to-destination <ip_server1>:80
+iptables-legacy --table nat --append PREROUTING --destination <destination_ip> -p tcp --dport 80 --jump DNAT --to-destination <ip_server2>:80
+iptables-legacy --table nat --append POSTROUTING -o eth0 --jump MASQUERADE

@@ -1,0 +1,52 @@
+
+# Create loopback
+ip addr add loopback_ip/32 dev lo
+route add loopback_ip/32 dev lo
+
+# Setting up VXLAN interfaces
+ip link add vtep<VNI_id> type vxlan id <VNI_id> dev lo dstport 4789 local loopback_ip nolearning
+ip link set up dev vtep<VNI_id>
+
+# ip link add vtep<VNI_id> type vxlan id <VNI_id> dev lo dstport 4789 local loopback_ip nolearning
+# ip link set up dev vtep<VNI_id>
+
+# ip link add vtep<VNI_id> type vxlan id <VNI_id> dev lo dstport 4789 local loopback_ip nolearning
+# ip link set up dev vtep<VNI_id>
+
+# Switch Layer-2 configuration - if there are servers and containers connected (like the lab_test)
+# Otherwise, remove this section
+ip link add bond2 type bond miimon 100 mode 802.3ad
+ip link set down dev eth2
+ip link set dev eth2 master bond2
+ip link set up dev eth2
+ip link set up dev bond2
+
+ip link add bond3 type bond miimon 100 mode 802.3ad
+ip link set down dev eth3
+ip link set dev eth3 master bond3
+ip link set up dev eth3
+ip link set up dev bond3
+
+
+# Creating the companion bridge
+ip link add br100 type bridge
+
+# Attach interfaces to the bridge 
+ip link set dev vtep<VNI_id> master br100
+# ip link set dev vtep<VNI_id> master br100
+# ip link set dev vtep<VNI_id> master br100
+ip link set dev bond2 master br100
+ip link set dev bond3 master br100
+# if there aren't bound, remove last two line
+
+# Enable bridge vlans
+# Edit vid id and vtep id
+ip link set dev br100 type bridge vlan_filtering 1
+bridge vlan add vid !10 dev vtep<VNI_id> pvid untagged
+bridge vlan add vid !20 dev vtep<VNI_id> pvid untagged
+bridge vlan add vid !30 dev vtep<VNI_id> pvid untagged
+bridge vlan add vid !10 dev bond2 or eth? pvid untagged
+bridge vlan add vid !20 dev bond2
+bridge vlan add vid !20 dev bond3
+bridge vlan add vid !30 dev bond3
+ip link set up dev br100
