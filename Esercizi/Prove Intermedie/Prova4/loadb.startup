@@ -1,0 +1,8 @@
+ifconfig eth0 9.9.9.9/24 up
+ifconfig eth1 192.168.10.1/24 up
+
+route add default gw 9.9.9.1
+
+iptables-legacy --table nat --append PREROUTING --destination 9.9.9.9 -p tcp --dport 80 --match statistic --mode random --probability 0.5 --jump DNAT --to-destination 192.168.10.2:80
+iptables-legacy --table nat --append PREROUTING --destination 9.9.9.9 -p tcp --dport 80 --jump DNAT --to-destination 192.168.10.3:80
+iptables-legacy --table nat --append POSTROUTING -o eth0 --jump MASQUERADE

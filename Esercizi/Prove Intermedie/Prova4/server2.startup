@@ -1,0 +1,6 @@
+ifconfig eth0 192.168.10.3/24 up
+ip link set dev eth0 mtu 1450
+
+route add default gw 192.168.10.1
+
+/etc/init.d/apache2 start
