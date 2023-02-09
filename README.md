@@ -3,13 +3,13 @@
 This repository contains the lectures and labs of 2022-2023 Internet and data Centers course at Roma Tre University.
 
 ## [Exercises](exercises)
-In this folder there are labs and intermediate tests carried out during the course. 
+This folder contains labs and intermediate tests carried out during the course. 
 
 ## [Lectures](lectures)
-In this folder there are lectures carried out during the course.
+This folder contains the 2022-23 lectures of the course.
 
 ## [Script](script)
-In this folder there are scripts that I wrote to generate the labs starting from a configuration file. The scripts only generate the folders and startup files (containing interfaces only) for the lab machines. After generating the lab it is necessary to configure the protocols of the machines and the startup files (if necessary, example *leaf* in data centers).
+This folder contains scripts that I wrote to generate the labs starting from a configuration file. The scripts only generate the folders and startup files (containing interfaces only) for the lab machines. After generating the lab it is necessary to configure the protocols of the machines and the startup files (if necessary, example *leaf* in data centers).
 
 In the lab folders there is the file `workspace.conf` used to generate the lab.
 
