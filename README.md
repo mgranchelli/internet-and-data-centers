@@ -2,6 +2,8 @@
 
 This repository contains the lectures and labs of 2022-2023 Internet and data Centers course at Roma Tre University.
 
+[Kathará](https://www.kathara.org) was used to test the labs. 
+
 ## [Exercises](exercises)
 This folder contains labs and intermediate tests carried out during the course. 
 
